@@ -1,0 +1,58 @@
+.container {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .info-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .info {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 10px;
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .actions {
+    flex: 2;
+  }
+  
+  .deposit-btn, .withdraw-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .deposit-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .deposit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .withdraw-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+  }
+  
+  .withdraw-btn:hover {
+    background-color: #db3b2e;
+  }
+  
+  input[type="number"] {
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
