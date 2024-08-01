@@ -13,19 +13,6 @@ async function main() {
   await assessment.deployed();
 
   console.log(`A contract with balance of ${initBalance} eth deployed to ${assessment.address}`);
-
-
-  // Deposit more than 5 ETH with custom message
-  const depositAmount = hre.ethers.utils.parseEther("6"); // 6 ETH
-  const depositMessage = "Deposit for custom function test";
-  await assessment.customDeposit(depositAmount);
-  console.log("Deposit of", hre.ethers.utils.formatEther(depositAmount), "ETH with message:", depositMessage);
-  
-
-  const withdrawAmount = hre.ethers.utils.parseEther("1"); // 1 ETH
-  await assessment.customWithdraw(withdrawAmount);
-  console.log("Withdraw of", hre.ethers.utils.formatEther(withdrawAmount), "ETH");
-
 }
 
 // We recommend this pattern to be able to use async/await everywhere
