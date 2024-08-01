@@ -57,45 +57,4 @@ contract Assessment {
         // emit the event
         emit Withdraw(_withdrawAmount);
     }
-
-    // Function to deposit a custom amount of ETH with a personal message
-    function customDeposit(uint256 _amount) public payable {
-        // Check if the deposit amount is more than 5 ETH
-        require(_amount > 5 ether, "Deposit amount must be more than 5 ETH");
-        
-        // perform transaction
-        balance += _amount;
-
-        // emit the deposit event
-        emit Deposit(_amount);
-    }
-
-
-    function customWithdraw(uint256 _withdrawAmount) public {
-        // Ensure only the owner can withdraw
-        require(msg.sender == owner, "You are not the owner of this account");
-
-        // Custom condition: Withdraw amount must be less than 2 ETH
-        require(_withdrawAmount < 2 ether, "Withdraw amount must be less than 2 ETH");
-
-        uint _previousBalance = balance;
-
-        // Check for sufficient balance
-        if (balance < _withdrawAmount) {
-            revert InsufficientBalance({
-                balance: balance,
-                withdrawAmount: _withdrawAmount
-            });
-        }
-
-        // Withdraw the specified amount
-        balance -= _withdrawAmount;
-
-        // Assert the balance is correct
-        assert(balance == (_previousBalance - _withdrawAmount));
-
-        // Emit the withdraw event
-        emit Withdraw(_withdrawAmount);
-    }
-
 }
